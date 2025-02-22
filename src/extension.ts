@@ -12,13 +12,13 @@ export function activate(context: ExtensionContext) {
             ViewColumn.One,
             {
                 enableScripts: true,
-                retainContextWhenHidden: true  // Add this to preserve state
+                retainContextWhenHidden: true  
             }
         );
 
-        // Add error handling for panel disposal
+     
         panel.onDidDispose(() => {
-            // Cleanup code here if needed
+         
         }, null, context.subscriptions);
 
         panel.webview.html = getWebviewContent();
