@@ -28,7 +28,7 @@ export function activate(context: ExtensionContext) {
                 const userPrompt = message.prompt;
                 let responseText = '';
 
-                // Update status to show loading
+                
                 panel.webview.postMessage({ command: 'updateStatus', status: 'loading' });
 
                 const systemPrompt = "You are an AI coding assistant named Edna. Answer concisely and accurately.";
@@ -51,7 +51,7 @@ export function activate(context: ExtensionContext) {
                         text: `Error: ${err instanceof Error ? err.message : String(err)}`
                     });
                 } finally {
-                    // Reset status when done
+                    
                     panel.webview.postMessage({ command: 'updateStatus', status: 'ready' });
                 }
             }
@@ -71,16 +71,24 @@ function getWebviewContent(): string {
     <style>
         body {
             font-family: Arial, sans-serif;
-            background-color: #0A192F;
+            background-color: #0A0F1E;
             color: #E0E0E0;
             padding: 20px;
             text-align: center;
             margin: 0;
             min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
         .container {
             max-width: 800px;
-            margin: 0 auto;
+            width: 100%;
+            padding: 20px;
+            border: 2px solid #FFFFFF;
+            border-radius: 10px;
+            background-color: #0D1B2A;
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
         }
         #prompt {
             width: 100%;
@@ -124,24 +132,12 @@ function getWebviewContent(): string {
             white-space: pre-wrap;
             box-sizing: border-box;
         }
-        .loading {
-            opacity: 0.7;
-        }
-        @keyframes spin {
-            to { transform: rotate(360deg); }
-        }
-        .spinner {
-            display: none;
-            width: 20px;
-            height: 20px;
-            border: 3px solid #E0E0E0;
-            border-top-color: transparent;
-            border-radius: 50%;
-            animation: spin 1s linear infinite;
-            margin: 10px auto;
-        }
-        .spinner.active {
-            display: inline-block;
+        .thinking {
+            background-color: #1B263B;
+            color: #A0AEC0;
+            padding: 10px;
+            border-radius: 5px;
+            font-style: italic;
         }
     </style>
 </head>
@@ -150,7 +146,6 @@ function getWebviewContent(): string {
         <h1>Edna-r1</h1>
         <textarea id="prompt" placeholder="Enter your prompt... (Ctrl+Enter to send)"></textarea><br>
         <button id="send">Send</button>
-        <div class="spinner"></div>
         <div id="output">Generated content will appear here...</div>
     </div>
     
@@ -158,7 +153,6 @@ function getWebviewContent(): string {
         const vscode = acquireVsCodeApi();
         const prompt = document.getElementById('prompt');
         const send = document.getElementById('send');
-        const spinner = document.querySelector('.spinner');
         let isGenerating = false;
 
         function generateResponse() {
@@ -166,7 +160,8 @@ function getWebviewContent(): string {
             
             isGenerating = true;
             send.disabled = true;
-            spinner.classList.add('active');
+            send.innerText = 'Sending...';
+            document.getElementById('output').innerHTML = '<div class="thinking">Thinking...</div>';
             vscode.postMessage({ command: 'generate', prompt: prompt.value });
         }
 
@@ -188,13 +183,14 @@ function getWebviewContent(): string {
                 if (status === 'ready') {
                     isGenerating = false;
                     send.disabled = false;
-                    spinner.classList.remove('active');
+                    send.innerText = 'Send';
                 }
             }
         });
     </script>
 </body>
-</html>`;
+</html>
+`;
 }
 
 export function deactivate() {}
