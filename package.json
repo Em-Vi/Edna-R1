@@ -1,4 +1,5 @@
 {
+  "publisher": "Em-Vi",
   "name": "edna-v1",
   "displayName": "Edna V1",
   "description": "VS Code extension using Ollama with DeepSeek",
