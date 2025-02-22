@@ -1,71 +1,62 @@
-# edna-v1 README
+# Edna-V1 - VS Code Extension
 
-This is the README for your extension "edna-v1". After writing up a brief description, we recommend including the following sections.
+Edna-V1 is a powerful VS Code extension designed to enhance your development workflow. This README provides an overview of its features, installation, and usage.
 
 ## Features
 
-Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
+- Powered by deepseek-r1 1.5b model
+- provides a dynamic UI to chat with model
+- **Advanced thinking capabilities**
 
-For example if there is an image subfolder under your extension project workspace:
+## Installation
 
-\!\[feature X\]\(images/feature-x.png\)
+### Requirements
 
-> Tip: Many popular extensions utilize animations. This is an excellent way to show off your extension! We recommend short, focused animations that are easy to follow.
+Ensure the following dependencies are installed:
 
-## Requirements
+- **Node.js & npm**: Download from [Node.js](https://nodejs.org/)
+- **VS Code**: Install from [Visual Studio Code](https://code.visualstudio.com/)
 
-If you have any requirements or dependencies, add a section describing those and how to install and configure them.
+### Installing the Extension
+
+1. Open a terminal in the extension directory.
+2. Run the following command to package the extension:
+   ```sh
+   vsce package
+   ```
+3. Install the extension in VS Code:
+   ```sh
+   code --install-extension edna-v1.vsix
+   ```
+4. Restart VS Code and activate the extension.
+
+## Usage
+
+- Open a new VS Code window and activate Edna-V1 from the command palette (`Ctrl+Shift+P`).
+- Configure settings via `File > Preferences > Settings`.
 
 ## Extension Settings
 
-Include if your extension adds any VS Code settings through the `contributes.configuration` extension point.
+This extension provides the following configurable settings:
 
-For example:
-
-This extension contributes the following settings:
-
-* `myExtension.enable`: Enable/disable this extension.
-* `myExtension.thing`: Set to `blah` to do something.
-
-## Known Issues
-
-Calling out known issues can help limit users opening duplicate issues against your extension.
+- `edna-v1.enable`: Enable/disable the extension.
+- `edna-v1.option`: Customizable option for user preferences.
 
 ## Release Notes
 
-Users appreciate release notes as you update your extension.
+### v1.0.0
 
-### 1.0.0
+- Initial release with core features.
 
-Initial release of ...
+### v1.1.0
 
-### 1.0.1
+- Improved performance and bug fixes.
 
-Fixed issue #.
+## Contribution
 
-### 1.1.0
+Contributions are welcome! Feel free to submit issues or pull requests on the [GitHub repository](https://github.com/your-repo).
 
-Added features X, Y, and Z.
+## License
 
----
+This extension is licensed under the MIT License.
 
-## Following extension guidelines
-
-Ensure that you've read through the extensions guidelines and follow the best practices for creating your extension.
-
-* [Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
-
-## Working with Markdown
-
-You can author your README using Visual Studio Code. Here are some useful editor keyboard shortcuts:
-
-* Split the editor (`Cmd+\` on macOS or `Ctrl+\` on Windows and Linux).
-* Toggle preview (`Shift+Cmd+V` on macOS or `Shift+Ctrl+V` on Windows and Linux).
-* Press `Ctrl+Space` (Windows, Linux, macOS) to see a list of Markdown snippets.
-
-## For more information
-
-* [Visual Studio Code's Markdown Support](http://code.visualstudio.com/docs/languages/markdown)
-* [Markdown Syntax Reference](https://help.github.com/articles/markdown-basics/)
-
-**Enjoy!**
