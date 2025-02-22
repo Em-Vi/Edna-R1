@@ -1,0 +1,49 @@
+{
+  "name": "edna-v1",
+  "displayName": "Edna V1",
+  "description": "VS Code extension using Ollama with DeepSeek",
+  "version": "0.0.1",
+  "type": "commonjs",
+  "engines": {
+    "vscode": "^1.84.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [
+    "onCommand:edna-v1.helloWorld",
+    "onStartupFinished"
+  ],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "edna-v1.helloWorld",
+        "title": "Open Edna Chat"
+      }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "tsc -p ./",
+    "watch": "tsc -watch -p ./",
+    "watch:tsc": "tsc --watch",
+    "watch:esbuild": "esbuild src/index.ts --outdir=dist --bundle --watch",
+    "pretest": "npm run compile && npm run lint",
+    "lint": "eslint src --ext ts"
+  },
+  "devDependencies": {
+    "@types/mocha": "^10.0.10",
+    "@types/node": "^16.18.34",
+    "@types/node-fetch": "^2.6.12",
+    "@types/vscode": "^1.84.0",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "esbuild": "^0.25.0",
+    "eslint": "^8.39.0",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "ollama": "latest"
+  }
+}
