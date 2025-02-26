@@ -24,11 +24,16 @@ Ensure the following dependencies are installed:
    ```sh
    vsce package
    ```
-3. Install the extension in VS Code:
+   or you have troublw with it, use npx
+   ```sh
+   npx vsce package
+   ```
+   
+4. Install the extension in VS Code:
    ```sh
    code --install-extension edna-v1.vsix
    ```
-4. Restart VS Code and activate the extension.
+5. Restart VS Code and activate the extension.
 
 ## Usage
 
