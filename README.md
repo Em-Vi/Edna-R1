@@ -24,7 +24,7 @@ Ensure the following dependencies are installed:
    ```sh
    vsce package
    ```
-   or you have troublw with it, use npx
+   or you have trouble with it, use npx
    ```sh
    npx vsce package
    ```
