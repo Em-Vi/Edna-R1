@@ -1,11 +1,16 @@
+Here's the updated README:
+
+---
+
 # Edna-V1 - VS Code Extension
 
-Edna-V1 is a powerful VS Code extension designed to enhance your development workflow. This README provides an overview of its features, installation, and usage.
+Edna-V1 is a powerful VS Code extension designed to enhance your development workflow. This extension requires the **Ollmaa** and **DeepSeek 1.5** models to provide advanced functionality. This README outlines its features, installation, and usage.
 
 ## Features
 
-- Powered by deepseek-r1 1.5b model
-- provides a dynamic UI to chat with model
+- Powered by **DeepSeek 1.5** model
+- Integrates with **Ollmaa** model for enhanced capabilities
+- Provides a dynamic UI to chat with the model
 - **Advanced thinking capabilities**
 
 ## Installation
@@ -16,6 +21,8 @@ Ensure the following dependencies are installed:
 
 - **Node.js & npm**: Download from [Node.js](https://nodejs.org/)
 - **VS Code**: Install from [Visual Studio Code](https://code.visualstudio.com/)
+- **Ollmaa**: Ensure the Ollmaa model is installed and configured
+- **DeepSeek 1.5**: Ensure the DeepSeek 1.5 model is installed
 
 ### Installing the Extension
 
@@ -24,16 +31,16 @@ Ensure the following dependencies are installed:
    ```sh
    vsce package
    ```
-   or you have trouble with it, use npx
+   If you encounter issues, you can also use `npx`:
    ```sh
    npx vsce package
    ```
    
-4. Install the extension in VS Code:
+3. Install the extension in VS Code:
    ```sh
    code --install-extension edna-v1.vsix
    ```
-5. Restart VS Code and activate the extension.
+4. Restart VS Code and activate the extension.
 
 ## Usage
 
@@ -59,9 +66,8 @@ This extension provides the following configurable settings:
 
 ## Contribution
 
-Contributions are welcome! Feel free to submit issues or pull requests on the [GitHub repository](https://github.com/your-repo).
+Contributions are welcome! Feel free to submit issues or pull requests on the https://github.com/Em-Vi/Edna-R1.
 
 ## License
 
 This extension is licensed under the MIT License.
-
